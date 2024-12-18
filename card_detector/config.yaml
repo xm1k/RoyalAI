@@ -1,0 +1,5 @@
+train: ../Документы/RoyalAI/card_detector/dataset/images
+val: ../Документы/RoyalAI/card_detector/dataset/images
+
+nc: 1  # Количество классов (в вашем случае - карта)
+names: ['card']  # Название класса
