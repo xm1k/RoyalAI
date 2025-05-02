@@ -6,7 +6,7 @@ import shutil
 
 model_path = 'card_detector/model.pt'
 model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_path)
-model.conf = 0.25
+model.conf = 0.2
 model.iou = 0.4
 
 
@@ -63,7 +63,7 @@ def detect_and_extract_cards(image_path, output_dir='detected_cards'):
             new_info = current_area - total_overlap_area
             new_info_percentage = new_info / current_area * 100
 
-            if new_info_percentage > 65:
+            if new_info_percentage > 70:
                 coordinates.append(current_box)
 
                 cropped_card = img.crop(current_box)
